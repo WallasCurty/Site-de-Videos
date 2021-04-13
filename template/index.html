@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="/template">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">CineLux ♕</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{{url_for('jogo')}}">Jogos</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('filme')}}">Filmes</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('humor')}}">Humor</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </form>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" aling= "middle">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src = "{{url_for ('static', filename = 'capa.jpg')}}" style="width: 1400px;" aling= "middle" />
+          </div>
+          
+        </div>
+    </div>
+    <br><br>
+    <div class="container">     
+        <div class="caixa d-flex justify-content-between">
+            <form class="item" action="/jogo">
+                <div class="card" style="width: 15rem;" aling= "middle">
+                  <img src = "{{url_for ('static', filename = 'game1.png')}}" style="width: 100;" aling= "middle" />
+                  <div class="card-body">
+                    <h5 class="card-title">Jogos</h5>
+                    <p class="card-text">Os principais videos de jogos você encontra disponibilizados aqui!</p>
+                    <a href="{{url_for('jogo')}}" class="btn btn-primary">Acesse</a>
+                </div>
+              </form>
+            </div>
+            <form class="item" action="/filme">
+              <div class="card" style="width: 15rem;" aling= "middle">
+                <img src = "{{url_for ('static', filename = 'filme.png')}}" style="width: 100;" aling= "middle" />
+                  <div class="card-body">
+                    <h5 class="card-title">Filmes</h5>
+                    <p class="card-text">Os principais traillers você encontra disponibilizados aqui!</p>
+                    <a href="{{url_for('filme')}}" class="btn btn-primary">Acesse</a>
+                </div>
+              </form>
+            </div>
+            <form class="item" action="/humor">
+              <div class="card" style="width: 15rem;" aling= "middle">
+                <img src = "{{url_for ('static', filename = 'humor.png')}}" style="width: 100;" aling= "middle" />
+                  <div class="card-body">
+                    <h5 class="card-title">Humor</h5>
+                    <p class="card-text">Os melhores videos de Humor você só encontra disponibilizados aqui!</p>
+                    <a href="{{url_for('humor')}}" class="btn btn-primary">Acesse</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
